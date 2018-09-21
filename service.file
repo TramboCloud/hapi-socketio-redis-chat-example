@@ -1,0 +1,17 @@
+[Unit]
+Description=My Miscellaneous Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Environment="REDIS_HOST=$REDIS_HOST"
+Environment="REDIS_PORT=$REDIS_PORT"
+Environment="PORT=$APP_PORT"
+WorkingDirectory=/root/hapi-socketio-redis-chat-example/
+ExecStart=/usr/bin/node /root/hapi-socketio-redis-chat-example/server.js 
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
