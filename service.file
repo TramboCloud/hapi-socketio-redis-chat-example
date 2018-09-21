@@ -8,10 +8,9 @@ User=root
 Environment="REDIS_HOST=$REDIS_HOST"
 Environment="REDIS_PORT=$REDIS_PORT"
 Environment="PORT=$APP_PORT"
-WorkingDirectory=/root/hapi-socketio-redis-chat-example/
-ExecStart=/usr/bin/node /root/hapi-socketio-redis-chat-example/server.js 
+WorkingDirectory=/opt/hapi-socketio-redis-chat-example/
+ExecStart=/usr/bin/node /opt/hapi-socketio-redis-chat-example/server.js 
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
-
