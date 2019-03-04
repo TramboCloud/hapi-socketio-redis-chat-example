@@ -1,0 +1,21 @@
+version: '3'
+services:
+  chat:
+    container_name: chat
+    command: npm start
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: chat
+    ports:
+      - 8000:8000
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      PORT: 8000
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
+    restart: always
